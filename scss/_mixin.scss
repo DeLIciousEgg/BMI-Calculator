@@ -1,0 +1,49 @@
+@function rhythm($level) {
+  @return $baseLine * ceil($level);
+}
+
+@function line($size) {
+  @return rhythm($size * 1.2 / $baseLine);
+}
+
+@mixin font($size, $line-height: auto) {
+  $line: line($size);
+
+  font-size: $size;
+  @if $line-height == auto or $line-height < $line {
+    line-height: $line;
+  } @else {
+    line-height: $line-height;
+  }
+}
+
+@mixin text-hide {
+  white-space: nowrap;
+  text-indent: 100%;
+  overflow: hidden;
+}
+
+//電腦
+ @mixin pc() {
+  @media all and (min-width: $pc-media) {
+               @content;
+         }
+    }
+//平板
+ @mixin pad() {
+@media all and (min-width:$pad-media) and (max-width: $pcs-media) {
+                @content;
+          }
+}
+//小平板
+ @mixin smallPad() {
+        @media all and (min-width: $phone-media) and (max-width:$pads-media) {
+                @content;
+          }
+ }
+//手機
+ @mixin phone() {
+        @media all and (max-width: $phones-media) {
+                @content;
+          }
+ }

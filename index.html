@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,42 @@
   <title>BMI</title>
   <link rel="stylesheet" href="style/main.css">
 </head>
-<body>
 
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="logo"></div>
+      <div class="wh">
+        <label for="Height">身高 cm</label>
+        <input type="text" class="Height" id="Height" placeholder="請輸入身高" required>
+        <label for="Weight">體重 kg</label>
+        <input type="text" class="Weight" id="Weight" placeholder="請輸入體重" required>
+      </div>
+      <a href="javascript:;" class="calc">看結果</a>
+      <div class="result">
+        <div class="left">
+          <h3 class="bmi">20.90</h3>
+          <span class="smallText">BMI</span>
+          <a href="javascript:;" class="reCalc">
+            <img src="./image/icons_loop.png" alt="">
+          </a>
+        </div>
+        <div class="right">
+          <h3 class="bmiResult">理想</h3>
+        </div>
+      </div>
+    </div>
+    <div class="records">
+      <h2>BMI 紀錄</h2>
+      <ul class="record">
+      </ul>
+    </div>
+    <div class="footer">
+      <div class="logo"></div>
+    </div>
+  </div>
 
   <script src="script/main.js"></script>
 </body>
+
 </html>

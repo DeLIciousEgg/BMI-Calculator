@@ -2,3 +2,10 @@
 @import "variables";
 @import "mixin";
 @import "extend";
+@import "index";
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
