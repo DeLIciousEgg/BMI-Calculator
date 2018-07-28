@@ -13,17 +13,18 @@
   @include phone {
     flex-wrap: wrap;
   }
-}
-.logo {
-  background-image: url(../image/BMICLogo.png);
-  width: 117px;
-  height: 117px;
-  @include smallPad {
-    display: none;
+  .logo {
+    background-image: url(../image/BMICLogo.png);
+    width: 117px;
+    height: 117px;
+    @include smallPad {
+      display: none;
+    }
+    @include phone {
+      display: none;
+    }
   }
-  @include phone {
-    display: none;
-  }
+  box-sizing: border-box;
 }
 .wh {
   margin-left: 80px;
@@ -140,14 +141,14 @@
   }
   > h3, > p{
     @extend %clearGutter;
+    flex-shrink: 0
   }
   > h3 {
-    flex: 1.5;
-    // flex-grow: 0.4;
-    // flex-basis: 0;
+    flex: 2;
   }
   > p {
-    flex: 1;
+    flex: 1.5;
+    text-align: center;
   }
   p > small {
     @include font(12px);
@@ -160,10 +161,27 @@
   @include smallPad {
     flex-wrap: wrap;
     text-align: center;
-    width: 100%;
+    max-width: 500px;
     h3, p {
-      flex-grow: 1;
-      flex-basis: 50%;
+      flex-grow: 2;
+    }
+    p {
+      margin-top: 5px;
+    }
+    p > small {
+      @include font(16px);
+      display: none;
+    }
+    p > span {
+      @include font(24px);
+    }
+  }
+  @include phone {
+    flex-wrap: wrap;
+    text-align: center;
+    max-width: 400px;
+    h3, p {
+      flex: 1;
     }
     p {
       margin-top: 5px;

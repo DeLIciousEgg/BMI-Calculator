@@ -361,6 +361,8 @@ template {
   background-color: #424242;
   min-height: 300px;
   padding: 20px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media all and (min-width: 480px) and (max-width: 759px) {
@@ -377,20 +379,20 @@ template {
   }
 }
 
-.logo {
+.header .logo {
   background-image: url(../image/BMICLogo.png);
   width: 117px;
   height: 117px;
 }
 
 @media all and (min-width: 480px) and (max-width: 759px) {
-  .logo {
+  .header .logo {
     display: none;
   }
 }
 
 @media all and (max-width: 479px) {
-  .logo {
+  .header .logo {
     display: none;
   }
 }
@@ -555,16 +557,22 @@ template {
           transform: translate(-5px, -5px);
 }
 
+.record li > h3, .record li > p {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
 .record li > h3 {
-  -webkit-box-flex: 1.5;
-      -ms-flex: 1.5;
-          flex: 1.5;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
 }
 
 .record li > p {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-flex: 1.5;
+      -ms-flex: 1.5;
+          flex: 1.5;
+  text-align: center;
 }
 
 .record li p > small {
@@ -584,14 +592,38 @@ template {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     text-align: center;
-    width: 100%;
+    max-width: 500px;
+  }
+  .record li h3, .record li p {
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+  }
+  .record li p {
+    margin-top: 5px;
+  }
+  .record li p > small {
+    font-size: 16px;
+    line-height: 20px;
+    display: none;
+  }
+  .record li p > span {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .record li {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    text-align: center;
+    max-width: 400px;
   }
   .record li h3, .record li p {
     -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+        -ms-flex: 1;
+            flex: 1;
   }
   .record li p {
     margin-top: 5px;
